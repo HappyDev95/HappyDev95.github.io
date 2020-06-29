@@ -33,7 +33,7 @@
         width: 123px;
         height: 224px;
         border-radius: 50%;
-        border: 6px solid #c2c2c2;
+        border: solid 6px rgb(111, 153, 95, 0.3);
       }
     }
 
@@ -97,9 +97,10 @@ h1 {
 }
 
 h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Playfair Display SC', sans-serif;
+  color: rgb(111, 153, 95);
   font-weight: 400;
-  font-size: 30px;
+  font-size: 35px;
   letter-spacing: 1px;
   margin: 15px auto;
 }
