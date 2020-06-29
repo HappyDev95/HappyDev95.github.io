@@ -1,0 +1,70 @@
+:host {
+  display: block;
+  text-align: center;
+}
+
+.main-row {
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  width: 100%;
+
+  .contentLeft {
+    text-align: center;
+    width: 60%;
+    padding: 10px;
+    margin: 50px 30px;
+
+    .project-info {
+      background-color: rgb(111, 153, 95, 0.7);
+      border-radius: 15px;
+      padding: 10px;
+    }
+  }
+
+  .contentRight {
+    width: 40%;
+    padding: 10px;
+    text-align: center;
+    margin: 50px 30px;
+
+    img {
+      object-fit: contain;
+      height: 80%;
+      width: 80%;
+    }
+
+  }
+}
+
+h1 {
+  font-family: 'Playfair Display SC', sans-serif;
+  font-weight: 400;
+  letter-spacing: 7px;
+  font-size: 40px;
+  margin: 20px auto;
+}
+
+h2 {
+  font-family: 'Playfair Display SC', sans-serif;
+  color: rgb(144, 36, 36);   //red
+  font-weight: 400;
+  font-size: 35px;
+  letter-spacing: 1px;
+  margin: 15px auto;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 10px auto;
+}
+
+h4 {
+  font-family: 'Roboto', sans-serif;
+  color: rgb(111, 153, 95);   //green
+  font-weight: 400;
+  font-size: 15px;
+  margin: 10px auto;
+}
