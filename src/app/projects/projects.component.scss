@@ -16,7 +16,7 @@
     margin: 50px 30px;
 
     .project-info {
-      background-color: rgb(111, 153, 95, 0.7);
+      background-color: rgb(111, 153, 95, 0.7);   //green
       border-radius: 15px;
       padding: 10px;
     }
@@ -30,8 +30,8 @@
 
     img {
       object-fit: contain;
-      height: 80%;
-      width: 80%;
+      height: 100%;
+      width: 100%;
     }
 
   }
@@ -43,6 +43,15 @@ h1 {
   letter-spacing: 7px;
   font-size: 40px;
   margin: 20px auto;
+}
+
+h1:after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 40%;
+  padding-top: 20px;
+  border-bottom: 1px solid  rgb(144, 36, 36);   //red
 }
 
 h2 {
@@ -67,4 +76,36 @@ h4 {
   font-weight: 400;
   font-size: 15px;
   margin: 10px auto;
+}
+
+@media screen and (max-width: 600px) {
+
+  .about-me-container-outer {
+    height: 100%;
+  }
+
+  .main-row {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+
+    .contentLeft {
+      margin: 0 auto;
+      padding: 0;
+      width: 90%;
+      padding-top: 50px;
+    }
+
+    .contentRight {
+      margin: 0 auto;
+      padding: 0;
+      width: 90%;
+    }
+  }
+
+  .main-row:before {
+    content: "";
+    display: block;
+    margin-top: 25px;
+  }
 }
