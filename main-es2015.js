@@ -58,7 +58,7 @@ AboutMeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Applications Developer");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "h3");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Norwich, Connecticut");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Pittsburgh, Pennsylvania");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "a", 8);
@@ -77,11 +77,11 @@ AboutMeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](22, "br");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "Motivated and quality-focused Applications Developer skilled in developing complex programs. Ability to quickly master new software packages, API\u2019s and framework technologies. Passionate about the work I do and diligent in the way I do it. Ready for new professional challenges and willing to take on dynamic responsibilities. ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "Motivated and quality-focused Applications Developer skilled in developing complex programs. Ability to quickly master new software packages, API\u2019s and framework technologies. Passionate about the work I do and diligent in the way I do it. ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](25, "br");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, "Currently I am employed at DXC Technology as a member of an Applications Development Team working on the General Dynamics Electric Boat account. I'm an avid runner and who enjoys the outdoors - the background picture was taken from a hike in the White Mountains. I graduated from Florida State University *Go Noles* and earned a Bachelors of Science degree in Computer Science with a minor in Mathematics as well as Natural Sciences. ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, "Currently I am employed at First National Bank as a member of an Applications Development Team working on fraud detection applications. I'm an avid runner and who enjoys the outdoors - the background picture was taken from a hike in the White Mountains. I graduated from Florida State University *Go Noles* and earned a Bachelors of Science degree in Computer Science with a minor in Mathematics as well as Natural Sciences. ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](28, "br");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "p");
@@ -146,10 +146,10 @@ AboutMeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](65, "In college much of my coursework focused on mathematics, algorithms, algorithm analysis, understanding object oriented design principals and patterns, and a strong emphasis on implementing these techniques in the C++ programming language. The foundation of knowledge I built at FSU abetted the transition from academic to professional tremendously and taught me invaluable lessons about trusting your preparation. ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](67, "Day-to-day work as an Applications Developer for me involves tasks such as writing backend business logic for some of our Java EE web applications. This typically includes interfacing with our clients to determine an appropriate data model, communicating with DBA\u2019s to accurately map out and ensure an effective database design for our application, developing the business logic for storing user-inputted data into Oracle databases and developing the business logic for displaying data from Oracle databases using SQL, prepared statements, JDBC, and the JPA. Additionally, I write stand-alone ETL (extract, transform, and load) applications using service oriented architecture and leveraging the following technologies: Java, JAXB, XSL, XSLT, XPath queries, and SQL. Daily I communicate with L3 support teams to deploy software to production as well as troubleshoot problems. ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](67, "At DXC Technology, day-to-day work as an Applications Developer involved tasks such as writing backend business logic for some of Java EE web applications. This typically included interfacing with clients to determine an appropriate data model, communicating with DBA\u2019s to accurately map out and ensure an effective database design for applications, developing the business logic for storing user-inputted data into Oracle databases and developing the business logic for displaying data from Oracle databases using SQL, prepared statements, JDBC, and the JPA. Additionally, I wrote stand-alone ETL (extract, transform, and load) applications using service oriented architecture and leveraged the following technologies: Java, JAXB, XSL, XSLT, XPath queries, and SQL. Daily I communicated with L3 support teams to deploy software to production as well as troubleshoot problems. ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](69, "My position at DXC Technology as member on the Applications Development Team has taught me a tremendous amount about professional software development and, my Java expertise, knowledge of software design and best practices, and technical skillset has been strengthened because of this. ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](69, "My position at DXC Technology as member on the Applications Development Team taught me a tremendous amount about professional software development. My expertise in Java, knowledge of software design and best practices, and technical skillset has been strengthened because of my time here. ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "div", 12);
