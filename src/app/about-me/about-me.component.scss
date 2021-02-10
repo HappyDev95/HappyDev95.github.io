@@ -1,13 +1,12 @@
 .about-me-container-outer {
   height: 800px;
   width: 100%;
-  background: url("./../../assets/images/WhiteMountains.png");
+  background: url("./../../assets/images/Green.png");
   background-size: cover;
 
   .about-me-container-inner {
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(to bottom, rgb(144, 36, 36, 0.8), rgb(144, 36, 36, 0.4));   //red
   }
 }
 
@@ -32,13 +31,13 @@
       img {
         width: 123px;
         height: 224px;
-        border-radius: 50%;
-        border: solid 6px rgb(111, 153, 95, 0.3);
+        border-radius: 100%;
+        border: solid 6px rgb(33, 114, 106, 0.7);
       }
     }
 
     .name-and-location {
-      background-color: rgb(111, 153, 95, 0.7);   //green
+      background-color: rgb(33, 114, 106); //green
       border-radius: 15px;
       width: 54%;
       margin: auto;
@@ -60,7 +59,7 @@
     margin: 50px 30px;
 
     .about-me-summary {
-      background-color: rgb(111, 153, 95, 0.7);   //green
+      background-color: rgb(33, 114, 106); //green
       border-radius: 15px;
       padding: 10px;
       margin-top: 125px;
