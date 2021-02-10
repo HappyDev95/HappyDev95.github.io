@@ -2,6 +2,7 @@
 
 #VS crap
 *.suo
+*.vs
 
 # compiled output
 /dist
