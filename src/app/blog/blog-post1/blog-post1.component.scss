@@ -1,0 +1,39 @@
+.bolded {
+    font-weight: bold;
+}
+
+.monospaced {
+    font-family: monospace;
+}
+
+.blog-post1-wrapper {
+  height: 100%;
+  width: 100%;
+  background: url("./../../../assets/images/app/Green.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Jost', sans-serif;
+  padding: 10px;
+}
+
+.paragraph-wrapper {
+  background-color: rgb(33, 114, 106); //green
+  border-radius: 15px;
+  margin: 0 auto;
+  width: 50%;
+  text-align: left;
+  padding: 15px;
+}
+
+.image-wrapper {
+    text-align:center;
+}
+
+h1 {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  text-align:center;
+}

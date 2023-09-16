@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "SamPortfolio", "SamPortfolio.esproj", "{F472A358-B734-4642-BFF2-1DCF53DF0E4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F472A358-B734-4642-BFF2-1DCF53DF0E4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F472A358-B734-4642-BFF2-1DCF53DF0E4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F472A358-B734-4642-BFF2-1DCF53DF0E4D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F472A358-B734-4642-BFF2-1DCF53DF0E4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F472A358-B734-4642-BFF2-1DCF53DF0E4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F472A358-B734-4642-BFF2-1DCF53DF0E4D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2DB15504-6532-4BB4-B530-83B7821C7639}
+	EndGlobalSection
+EndGlobal

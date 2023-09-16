@@ -1,0 +1,97 @@
+<div class="blog-post1-wrapper">
+  <div class="paragraph-wrapper">
+    <h1>Running Docker Containers Locally on Apple Silicon</h1>
+    <p>
+      Your polished, well tested, containerized application might crash… along with you and your
+      teammates sanity! I was recently exploring Docker Desktop on with an Apple Silicon machine.
+    </p>
+
+    <div class="image-wrapper">
+      <img src="./../../../assets/images/blog/post1/AboutThisMac.png" alt="About This Mac">
+    </div>
+    <br />
+
+    <p>
+      And (very quickly), I noticed that containers could not and would not stay running. <em>Uh oh</em>. After trying “<em>did you turn it off and turn it on again</em>”
+      to no avail, I tried more advanced troubleshooting. Right away I noticed a warning on Docker Desktop:
+    </p>
+
+    <div class="image-wrapper">
+      <img class="image" src="./../../../assets/images/blog/post1/DockerDesktopWarning.png" alt="Docker Desktop Platform Warning">
+    </div>
+    <br />
+
+    <p>
+      <em>Interesting…</em>
+      <br />
+      First, I observed. There was absolutely no pattern in which the running containers would fail. It was seemingly
+      at random.
+      <br />
+      Next, I ran containers in the foreground to observe the logs and had some very interesting stack traces.
+      <br />
+      Then, I Googled
+    </p>
+    <br />
+    <p>
+      First stop, Docker docs. https://docs.docker.com/desktop/troubleshoot/known-issues/
+      <em>
+        "In summary, running Intel-based containers on Arm-based machines should be regarded as "best effort" only.
+        We recommend running arm64 containers on Apple silicon machines whenever possible, and encouraging container authors to produce arm64,
+        or multi-arch, versions of their containers. This issue should become less common over time, as more and more images are rebuilt…"
+      </em>
+    </p>
+
+    <p>
+      Great.
+      More Googling. https://docs.docker.com/build/building/multi-platform/
+      <em>
+        "Docker images can support multiple platforms, which means that a single image may contain variants for different architectures, and sometimes for different operating systems,
+        such as Windows. When you run an image with multi-platform support, Docker automatically selects the image that matches your OS and architecture."
+      </em>
+    </p>
+    <br />
+    <p class="bolded">
+      "When you run an image with multi-platform support, Docker automatically selects the image that matches your OS and architecture."
+    </p>
+    <br />
+    <p>
+      In my case, our services are not multi-platform images so Docker pulls down whatever I have in the registry even if it is incompatible with the platform it is running on (<em>to be fair Docker did warn me!</em>).
+      <br /><br />
+      <em>One possible solution</em>: could I re-build all the problematic images and target the correct architecture required by apple silicon? Yes! But what if I don’t own the Dockerfile? Or what if I don’t even own the service?
+      And what are the downstream effects of creating builds targeting different platforms and putting those images into Artifactory?
+      <br /><br />
+      Hmm... Can I keep this issue local?
+      <br /><br />
+      <em>2nd possible solution (and ultimately the winner)</em>: could I create a Docker image on an apple silicon machine that targets the ARM64 architecture?
+      Yes, and here is how I did it. https://docs.docker.com/build/building/multi-stage/
+    </p>
+
+    <p>
+      I created a <span class="monospaced">Dockerfile</span>, one for each of the effected containers (images that produced the platform warning).
+    </p>
+    <div class="image-wrapper">
+      <img src="./../../../assets/images/blog/post1/DockerfileHack.png" alt="Dockerfile Example">
+    </div>
+
+    <p>
+      The 1st <span class="monospaced">FROM</span> step builds a base image from the image of the service which was causing issues.
+      <br />
+      The 2nd <span class="monospaced">FROM</span> step has a base of .NET 7 (.NET 7 in the docker registry is a multi-platform build and has images that target the correct apple silicon architecture) and is the final base image.
+      <br />
+      <br />
+      Finally, when the <span class="monospaced">docker build</span> command is issued on an apple silicon machine the correct image is pulled for a M1 or M2 chip and all the containers run stable without crashing!
+      <br />
+      <br />
+      I discovered this command: <span class="monospaced">docker buildx imagetools inspect image</span>
+      <br />
+      This will show the Docker images available in the registry and the platform they are built for if they are a multi-platform image:
+    </p>
+    <div class="image-wrapper">
+      <img src="./../../../assets/images/blog/post1/MultiPlatformImage.png" alt="Multiplatform Image">
+    </div>
+
+    <p>
+      So, if you find yourself with apple silicon and experience issues with running Docker containers locally see if these hacks will work for you to save you – and your teammates – time and effort.
+    </p>
+  </div>
+</div>
