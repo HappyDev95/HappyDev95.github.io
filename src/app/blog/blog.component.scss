@@ -68,11 +68,13 @@ p {
       padding: 0;
       width: 50%;
       padding-top: 50px;
+      margin: 0 auto;
     }
 
     .contentRight {
       padding: 0;
       width: 50%;
+      margin: 0 auto;
     }
   }
 
@@ -80,5 +82,36 @@ p {
     content: "";
     display: block;
     margin-top: 25px;
+  }
+}
+
+@media screen and (max-width: 768px) and (max-height: 1024px) {
+  .about-me-container-outer {
+    height: 1000px;
+  }
+
+  #picture-and-name {
+    padding-top: 230px;
+  }
+
+  .main-row {
+    .contentLeft {
+      margin: 0 auto;
+
+      .profile-picture {
+        height: auto;
+        width: auto;
+        margin: 0 auto;
+      }
+
+      .name-and-location {
+        margin: 0 auto;
+        width: 88%;
+      }
+    }
+
+    .contentRight {
+      margin: 0 auto;
+    }
   }
 }
