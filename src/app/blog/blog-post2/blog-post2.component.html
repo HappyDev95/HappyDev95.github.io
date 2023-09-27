@@ -1,0 +1,134 @@
+<div class="blog-post2-wrapper">
+  <div class="paragraph-wrapper">
+    <h1>C# Gotcha's</h1>
+    <p>
+      I’ve decided to sit down and compile a small list of some things I’ve noticed working with C#.
+      In particular, the times when I’ve been burned by something that I should’ve paid a little closer attention to.
+    </p>
+
+    <section>
+      <h2>HttpClient Timeout Exception</h2>
+      <p>
+        Here’s one that I find amusing the <span class="monospaced">HttpClient</span> timeout. You would assume a <span class="monospaced">HttpClient</span> timeout would throw a <span class="monospaced">TimeoutException</span> upon exceeding
+        the timeout threshold. Surprise! What ends up getting thrown is a <span class="monospaced">TaskCancelledException</span>.
+        To illustrate this point, I set up a simple example with 2 services. Service A and Service B. Service A will send a http request via
+        <span class="monospaced">HttpClient</span> (<span class="monospaced">System.Net.Http.HttpClient</span>) to Service B and expect a response within the configured timeout of 10 seconds.
+        To demonstrate the timeout Service B is setup to wait 15 seconds before returning the result.
+      </p>
+
+      <div class="image-wrapper">
+        <img class="image" src="./../../../assets/images/blog/post2/httpclient_timeout_exception_01.png" alt="HttpClient Timeout Exception Example">
+      </div>
+
+      <div class="image-wrapper">
+        <img class="image" src="./../../../assets/images/blog/post2/httpclient_timeout_exception_02.png" alt="HttpClient Timeout Exception Example">
+      </div>
+
+      <p>
+        I went ahead and set some breakpoints on the exceptions in the above <span class="monospaced">try…catch…</span> block. After waiting those 10 seconds we can see which exception we end up hitting:
+      </p>
+
+      <div class="image-wrapper">
+        <img class="image" src="./../../../assets/images/blog/post2/httpclient_timeout_exception_03.png" alt="HttpClient Timeout Exception Example">
+      </div>
+
+      <p>
+        Here’s an excellent blog post I found on the topic when I first encountered this quirk:
+        <a href="https://thomaslevesque.com/2018/02/25/better-timeout-handling-with-httpclient/">https://thomaslevesque.com/2018/02/25/better-timeout-handling-with-httpclient/</a>
+      </p>
+      <br />
+    </section>
+
+
+    <section>
+      <h2>DateTime.ToString()</h2>
+      <p>
+        Who needs those milliseconds anyways? Not me!
+      </p>
+
+      <div class="image-wrapper">
+        <img class="image" src="./../../../assets/images/blog/post2/datetime_Issue_01.png" alt="Not Me">
+      </div>
+
+      <p>
+        Don’t be mistaken that calling <span class="monospaced">DateTime.ToString()</span> will return the entirety of the date part and time part of the <span class="monospaced">DateTime</span> object.
+        Don’t believe me take if from the .NET docs: “The default date and time formatting methods, such as DateTime.ToString(),
+        include the hours, minutes, and seconds of a time value but exclude its milliseconds component.”
+        <a href="https://learn.microsoft.com/en-us/dotnet/standard/base-types/how-to-display-milliseconds-in-date-and-time-values">https://learn.microsoft.com/en-us/dotnet/standard/base-types/how-to-display-milliseconds-in-date-and-time-values</a>
+      </p>
+      <div class="image-wrapper">
+        <img class="image" src="./../../../assets/images/blog/post2/datetime_Issue_02.png" alt="DateTime.ToString()">
+      </div>
+      <div class="image-wrapper">
+        <img class="image" src="./../../../assets/images/blog/post2/datetime_Issue_03.png" alt="DateTime.ToString()">
+      </div>
+      <br />
+      <p>
+        If you value to your milliseconds make sure that DateTime.ToString() is doing what you think it is!
+        Here’s another small example to show the point:
+      </p>
+    </section>
+
+    <section>
+      <h2>Task.Result vs Await</h2>
+
+      <p>
+        Be careful of using <span class="monospaced">Task.Result</span> over <span class="monospaced">await</span> to get the result of an asynchronous operation as it could have unintended side-effects. <span class="monospaced">Task.Result</span> will block the current thread until the async operation is
+        completed which is nothing like <span class="monospaced">await</span>. Here is the decompiled code for the <span class="monospaced">Result</span> property in the <span class="monospaced">Task</span> class:
+      </p>
+
+      <div class="image-wrapper">
+        <img class="image" src="./../../../assets/images/blog/post2/Task_Issue_01.png" alt="Task.Result Issue">
+      </div>
+
+      <p>
+        <span class="monospaced">await</span>, unlike <span class="monospaced">Task.Result</span>, will not block the current thread and instead it will cause the thread to wait asynchronously until the task completes and then continue.
+      </p>
+      <br />
+      <p>
+        In keeping with the theme here is a small example to illustrate this point:
+      </p>
+
+      <div class="image-wrapper">
+        <img class="image" src="./../../../assets/images/blog/post2/Task_Issue_02.png" alt="Task.Result Issue">
+      </div>
+
+      <div class="image-wrapper">
+        <img class="image" src="./../../../assets/images/blog/post2/Task_Issue_02.png" alt="Task.Result Issue">
+      </div>
+      <p>
+        Now for the more sinister example:
+      </p>
+      <br />
+      <div class="image-wrapper">
+        <img class="image" src="./../../../assets/images/blog/post2/Task_Issue_03.png" alt="Task.Result Issue">
+      </div>
+      <div class="image-wrapper">
+        <img class="image" src="./../../../assets/images/blog/post2/Task_Issue_04.png" alt="Task.Result Issue">
+      </div>
+
+      <p>
+        You can see in example B that the current threads execution is blocked until <span class="monospaced">Task.Result</span> completes (why #2 wasn’t logged until the end).
+      </p>
+      <br />
+      <p>
+        This is just a small list of C# things I’ve noticed that required me to do a double take. I’m sure there are more, and I’d love to hear about them. I hope this article reinforced what you already knew or showed you something you might not have known.
+      </p>
+      <br />
+      <p>
+        Thanks for reading!
+        Sam
+      </p>
+    </section>
+
+    <section>
+      <h2>Additional Reading</h2>
+      <a href="https://stackoverflow.com/questions/241134/what-is-the-worst-gotcha-in-c-sharp-or-net">https://stackoverflow.com/questions/241134/what-is-the-worst-gotcha-in-c-sharp-or-net</a>
+      <br />
+      <a href="https://thomaslevesque.com/2018/02/25/better-timeout-handling-with-httpclient/">https://thomaslevesque.com/2018/02/25/better-timeout-handling-with-httpclient/</a>
+      <br />
+      <a href="https://learn.microsoft.com/en-us/dotnet/standard/base-types/how-to-display-milliseconds-in-date-and-time-values">https://learn.microsoft.com/en-us/dotnet/standard/base-types/how-to-display-milliseconds-in-date-and-time-values</a>
+      <br />
+    </section>
+  </div>
+</div>
