@@ -7,6 +7,7 @@ import { BlogComponent } from './blog/blog.component';
 import { BlogPost1Component } from './blog/blog-post1/blog-post1.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BlogPost2Component } from './blog/blog-post2/blog-post2.component';
+import { BlogPost3Component } from './blog/blog-post3/blog-post3.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { BlogPost2Component } from './blog/blog-post2/blog-post2.component';
     AboutMeComponent,
     BlogComponent,
     BlogPost1Component,
-    BlogPost2Component
+    BlogPost2Component,
+    BlogPost3Component
   ],
   imports: [
     BrowserModule,
